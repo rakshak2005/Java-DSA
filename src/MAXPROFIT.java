@@ -1,24 +1,35 @@
-
-public class MAXPROFIT {
+public class MAXPROFIT{
+	
 	
 	public static int maxprofit(int[] prices) {
-		int minProfit = Integer.MAX_VALUE;
-		int maxProfit = 0;
 		
-		for (int price: prices){
-			minProfit = Math.min(minProfit,price);
+		int MinPrice = 1000000000;
+		int MaxProfit = 0;
+		
+		for (int price: prices) {
+			MinPrice = Math.min(MinPrice,price);
+			int profit = price - MinPrice;
+			MaxProfit = Math.max(MaxProfit, profit);
 			
-			int profit = price - minProfit;
-			maxProfit = Math.max(maxProfit,profit);
 		}
 		
-		return maxProfit;
+		return MaxProfit;
 	}
 	
 	
-    public static void main (String[] args) {
-    	int[] prices = {7,6,4,3,1};
-    	int ans = maxprofit(prices);
-    	System.out.println(ans);
-    }
+	
+	public static void main(String[] args) {
+		
+		int[] prices = {7,1,5,3,6,4 };
+		
+		int ans = maxprofit(prices);
+		System.out.println(ans);
+		
+		
+	}
+	
+	
+	
+	
+	
 }
